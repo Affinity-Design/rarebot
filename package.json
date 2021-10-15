@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node off.js"
+    "start": "node on.js"
   },
   "author": "RarifyApps",
   "license": "MIT",

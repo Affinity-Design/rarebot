@@ -1,4 +1,4 @@
-// TODO make sure to switch package.json start script before pushing IE: "start": "node rarecoinbot.js"
+// TODO make sure to switch package.json start script before pushing IE: "start": "node on.js"
 const TelegramBot = require("node-telegram-bot-api");
 const axios = require("axios");
 const token = process.env.TELEGRAM_TOKEN;
