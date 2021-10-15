@@ -1,0 +1,17 @@
+{
+  "name": "rarecoinbot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node off.js"
+  },
+  "author": "RarifyApps",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "node-telegram-bot-api": "^0.54.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
