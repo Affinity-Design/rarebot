@@ -2,7 +2,7 @@
 
 This project includes a Node.js server script that connects to the tellagram API for usefull commands for the Rare Coin Community Tellagram Group 🎨
 
-[Rare Coin Group](https://t.me/rarify_community) the group this app was built for[RareCoinBot](@rarecoinbot) the bot account where code is deployed.
+[Rare Coin Group](https://t.me/rarify_community) the group this app was built for [RareCoinBot](@rarecoinbot) the bot account where code is deployed.
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@ This project was mostly writen with [node-telegram-bot-api package](https://gith
 
 ## Usage
 
-- [Using The API][api]
-- [Formatting Used][dev]
+- [Using The API](https://github.com/Affinity-Design/rarebot/blob/master/doc/api.md)
+- [Formatting Used](https://github.com/Affinity-Design/rarebot/blob/master/doc/dev.md)
 
 ## What's in this project?
 

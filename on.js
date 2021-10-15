@@ -7,14 +7,26 @@ const domain = "rare.claims";
 const secure = "https";
 const loadingMessage = "Retrieving... Please Wait";
 const errorMessage = "Sorry, something went wrong. Try again latter";
-const whatcanthisbotdo = `An interactive chatbot created to help you get started with The Rare Coin Cryptocurrency Native To xDai Chain | https://rare.fyi 
-*Here are just SOME of the cool things I can get for you!*
-⚡️/price - gets the price of Rare Coin 
-⚡️/marketcap - gets the current market cap of Rare Coin
-⚡️/circulatingSupply - gets the amount of circulatinf Rare Coin
-📖 Get all the links you need to get started with Rare Coin 
-📖 Get a list of the most asked questions! 
-📖 Return a list of all my commands!`;
+const links = `<b>🚀🚀 Rarify Key Links & How To Get Started 🚀🚀
+
+Telegram Community Groups //</b>
+@rarify_news | @rarify_community | @rarifyc_espanol
+
+<b>Trusted Telegram Accounts //</b> <i>(Will Not DM First)</i>
+@rarify @paulysun @rjayerbe @martxel_larralde 
+
+<b>~~~~~~~🚀 APP LINKS 🚀~~~~~~~</b> 
+<b>Our Official Website:</b> https://rare.fyi/
+<b>Our Resource Page:</b> https://rare.fyi/articles/
+<b>Audit & FAQS:</b> https://rare.fyi/faqs/
+<b>Roadmap:</b> https://rare.fyi/roadmap
+<b>Where To Trade:</b> https://rare.fyi/trade
+<b>Buy App</b> 👉 https://rare.fyi/buy
+<b>Staking App</b> 👉 https://rare.fyi/stake
+<b>Claiming App</b> 👉 https://rare.fyi/claim-v2
+<b>RareLotto App</b> 👉 https://rare.fyi/lotto
+
+<b>TOKEN ADDRESS & IS ONLY ON XDAI  (RAREv2): </b> <a href="https://blockscout.com/xdai/mainnet/token/0x57e93BB58268dE818B42E3795c97BAD58aFCD3Fe/token-transfers">0x57e93BB58268dE818B42E3795c97BAD58aFCD3Fe</a>`;
 
 // auto responder
 // bot.on("message", (msg) => {
@@ -24,11 +36,11 @@ const whatcanthisbotdo = `An interactive chatbot created to help you get started
 //   // }
 // });
 
-// Default Greeting for new memebers TODO TEST!
+// Default Greeting for new memebers
 bot.on("new_chat_members", (msg) => {
   bot.sendMessage(
     msg.chat.id,
-    `Hi ${msg.from.first_name} Welcome to the Rare Coin community!`,
+    `Welcome ${msg.from.first_name} to our community! If you have any questions DM me and i'll help you get started!`,
     {
       disable_web_page_preview: true,
       parse_mode: "HTML",
@@ -67,33 +79,10 @@ bot.onText(/I have A Question/, (msg) => {
 
 // Get Link List | Returns list of common links to the user
 bot.onText(/Get Links/, (msg) => {
-  bot.sendMessage(
-    msg.chat.id,
-    `<b>🚀🚀 Rarify Key Links & How To Get Started 🚀🚀
-
-  Telegram Community Groups //</b>
-  @rarify_news | @rarify_community | @rarifyc_espanol
-  
-  <b>Trusted Telegram Accounts //</b> <i>(Will Not DM First)</i>
-  @rarify @paulysun @rjayerbe @martxel_larralde 
-  
-  <b>~~~~~~~🚀 APP LINKS 🚀~~~~~~~</b> 
-  <b>Our Official Website:</b> https://rare.fyi/
-  <b>Our Resource Page:</b> https://rare.fyi/articles/
-  <b>Audit & FAQS:</b> https://rare.fyi/faqs/
-  <b>Roadmap:</b> https://rare.fyi/roadmap
-  <b>Where To Trade:</b> https://rare.fyi/trade
-  <b>Buy App</b> 👉 https://rare.fyi/buy
-  <b>Staking App</b> 👉 https://rare.fyi/stake
-  <b>Claiming App</b> 👉 https://rare.fyi/claim-v2
-  <b>RareLotto App</b> 👉 https://rare.fyi/lotto
-  
-  <b>TOKEN ADDRESS & IS ONLY ON XDAI  (RAREv2): </b> <a href="https://blockscout.com/xdai/mainnet/token/0x57e93BB58268dE818B42E3795c97BAD58aFCD3Fe/token-transfers">0x57e93BB58268dE818B42E3795c97BAD58aFCD3Fe</a>`,
-    {
-      disable_web_page_preview: true,
-      parse_mode: "HTML",
-    }
-  );
+  bot.sendMessage(msg.chat.id, `${links}`, {
+    disable_web_page_preview: true,
+    parse_mode: "HTML",
+  });
 });
 
 // Get List Of Commands | Returns list of commands to user
@@ -252,4 +241,12 @@ bot.onText(/\/volume/, async (msg) => {
     console.log(err);
     bot.sendMessage(msg.chat.id, `${errorMessage}`);
   }
+});
+
+// /get links
+bot.onText(/\/getlinks/, (msg) => {
+  bot.sendMessage(msg.chat.id, `${links}`, {
+    disable_web_page_preview: true,
+    parse_mode: "HTML",
+  });
 });
