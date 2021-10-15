@@ -9,6 +9,32 @@ const loadingMessage = "Retrieving... Please Wait";
 const errorMessage = "Sorry, something went wrong. Try again latter";
 const links = `<b>🚀🚀 Rarify Key Links & How To Get Started 🚀🚀
 
+// Health Checks
+const express = require('express');
+const http = require('http');
+const app = express();
+const router = express.Router();
+router.use((req, res, next) => {
+  res.header('Access-Control-Allow-Methods', 'GET');
+  next();
+});
+router.get('/health', (req, res) => {
+  res.status(200).send('Ok');
+});
+app.use('/api/v1', router);
+const server = http.createServer(app);
+server.listen(3000);
+router.get('/health', (req, res) => {
+  const data = {
+    uptime: process.uptime(),
+    message: 'Ok',
+    date: new Date()
+  }
+
+  res.status(200).send(data);
+});
+
+
 Telegram Community Groups //</b>
 @rarify_news | @rarify_community | @rarifyc_espanol
 
