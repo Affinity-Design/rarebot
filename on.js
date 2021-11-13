@@ -36,16 +36,16 @@ router.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET");
   next();
 });
-app.use("/api/v1", router);
+app.use("/api", router);
 const server = http.createServer(app);
 server.listen(3000);
 router.get("/", (req, res) => {
-  res.status(200).send("Ok");
+  res.status(200).send("OK");
 });
 router.get("/health", (req, res) => {
   const data = {
     uptime: process.uptime(),
-    message: "Ok",
+    message: "OK",
     date: new Date(),
   };
   res.status(200).send(data);
