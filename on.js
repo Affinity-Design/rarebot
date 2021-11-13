@@ -8,7 +8,6 @@ const secure = "https";
 const loadingMessage = "Retrieving... Please Wait";
 const errorMessage = "Sorry, something went wrong. Try again latter";
 const links = `<b>🚀🚀 Rarify Key Links & How To Get Started 🚀🚀
-
 Telegram Community Groups //</b>
 @rarify_news | @rarify_community | @rarifyc_espanol
 
