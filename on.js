@@ -50,7 +50,7 @@ router.get("/health", (req, res) => {
 app.use("/api", router);
 
 const server = http.createServer(app);
-server.listen("0.0.0.0");
+server.listen(8080);
 // auto responder
 // bot.on("message", (msg) => {
 //   // Kicks if says sware word example
