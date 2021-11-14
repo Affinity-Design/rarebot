@@ -50,7 +50,7 @@ router.get("/health", (req, res) => {
 app.use("/api", router);
 
 const server = http.createServer(app);
-server.listen(3000);
+server.listen("0.0.0.0");
 // auto responder
 // bot.on("message", (msg) => {
 //   // Kicks if says sware word example
@@ -60,16 +60,17 @@ server.listen(3000);
 // });
 
 // Default Greeting for new memebers
-bot.on("new_chat_members", (msg) => {
-  bot.sendMessage(
-    msg.chat.id,
-    `Welcome ${msg.from.first_name} to our community! If you have any questions DM me and i'll help you get started!`,
-    {
-      disable_web_page_preview: true,
-      parse_mode: "HTML",
-    }
-  );
-});
+.bot
+  .on("new_chat_members", (msg) => {
+    bot.sendMessage(
+      msg.chat.id,
+      `Welcome ${msg.from.first_name} to our community! If you have any questions DM me and i'll help you get started!`,
+      {
+        disable_web_page_preview: true,
+        parse_mode: "HTML",
+      }
+    );
+  });
 
 // I have A Question |  TODO build interactive, try to fetch response off users questions
 bot.onText(/I have A Question/, (msg) => {
