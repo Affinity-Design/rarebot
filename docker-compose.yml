@@ -7,14 +7,14 @@ services:
       - .:/usr/app/
       - /usr/app/node_modules
     ports:
-      - "3000:3000"
+      # - "3000:3000"
       - "9090-9091:8080-8081"
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: postgres://todoapp@postgres/todos
-  postgres:
-    image: postgres:9.6.2-alpine
-    environment:
-      POSTGRES_USER: paulysun
-      POSTGRES_DB: Zenisthebest1@
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DATABASE_URL: postgres://todoapp@postgres/todos
+  # postgres:
+  #   image: postgres:9.6.2-alpine
+  #   environment:
+  #     POSTGRES_USER: paulysun
+  #     POSTGRES_DB: Zenisthebest1@
